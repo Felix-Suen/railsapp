@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  http_basic_authenticate_with name: "flex", password: "skooma", except: [:index, :show]
+
   def index
     @posts = Post.all
   end
